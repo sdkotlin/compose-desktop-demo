@@ -4,8 +4,8 @@ import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	kotlin("jvm") version "1.4.30"
-	id("org.jetbrains.compose") version "0.3.1"
+	kotlin("jvm") version "1.4.31"
+	id("org.jetbrains.compose") version "0.3.2"
 }
 
 group = "org.sdkotlin"
@@ -14,9 +14,10 @@ version = "1.0.0"
 dependencies {
 	implementation(compose.desktop.currentOs)
 
-	val junitVersion = "5.7.1"
-	testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
-	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+	implementation(platform("org.junit:junit-bom:5.7.1"))
+
+	testImplementation("org.junit.jupiter:junit-jupiter-api")
+	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 }
 
 tasks {
