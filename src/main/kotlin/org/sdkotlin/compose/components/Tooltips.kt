@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun Tooltip(
+fun StandardTooltip(
 	tooltipText: String,
 	delayMillis: Int = 500,
 	content: @Composable () -> Unit,
